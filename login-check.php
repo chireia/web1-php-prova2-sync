@@ -16,10 +16,8 @@ session_start();
         }
         else {
             $_SESSION['status'] = 'sucess';
-            $_SESSION['user'] = $user;
+            $_SESSION['user'] = $row['userName'];
             $_SESSION['type'] = $row['userType'];
-
-
 
             header("location:index.php");
         }

@@ -4,4 +4,4 @@ Todos os requisitos da prova podem ser encontrados na pasta docs.
 
 Professor Jivago Ribeiro
 
-Minha primeira experiência com desenvolvimento PHP e JS
+Minha primeira experiência com PHP e JS
