@@ -35,7 +35,6 @@
                 $query = "SELECT m.movieId,m.movieName,m.movieDesc,g.genreName,c.classificationSimbol FROM movies m INNER JOIN genres g ON m.movieGenreId = g.genreId INNER JOIN classifications c ON m.movieClassificationId = c.classificationId";
                 $select = mysqli_query($con, $query);
                 
-
                 while ($res = mysqli_fetch_array($select)) {
                     echo "<tr><td>".$res['movieId']."</td><td>".$res['movieName']."</td><td>".$res['movieDesc']."</td><td>".$res['genreName']."</td><td>".$res['classificationSimbol'];
                 }

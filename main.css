@@ -211,7 +211,12 @@ main.index header.index figure {
   height: 100%;
 }
 
-main.index header.index figure img {
+main.index header.index figure a {
+  display: block;
+  height: 100%;
+}
+
+main.index header.index figure a img {
   width: 171.844px;
   height: 100%;
 }
