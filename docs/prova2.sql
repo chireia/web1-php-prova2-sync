@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 13, 2018 at 05:45 PM
+-- Generation Time: Oct 16, 2018 at 08:49 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS `classifications`;
 CREATE TABLE IF NOT EXISTS `classifications` (
   `classificationId` int(11) NOT NULL AUTO_INCREMENT,
   `classificationSimbol` char(2) DEFAULT NULL,
-  `classificationDesc` varchar(300) DEFAULT NULL,
+  `classificationDesc` varchar(300) NOT NULL,
   PRIMARY KEY (`classificationId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
@@ -69,7 +69,7 @@ INSERT INTO `genres` (`genreId`, `genreName`) VALUES
 (1, 'Sci-Fi'),
 (2, 'Action'),
 (3, 'Drama'),
-(4, 'Comedies'),
+(4, 'Comedy'),
 (5, 'Romance'),
 (6, 'Horror');
 
@@ -82,24 +82,25 @@ INSERT INTO `genres` (`genreId`, `genreName`) VALUES
 DROP TABLE IF EXISTS `movies`;
 CREATE TABLE IF NOT EXISTS `movies` (
   `movieId` int(11) NOT NULL AUTO_INCREMENT,
-  `movieName` varchar(300) DEFAULT NULL,
-  `movieDesc` varchar(600) DEFAULT NULL,
-  `movieDuration` time DEFAULT NULL,
+  `movieName` varchar(300) NOT NULL,
+  `movieDesc` varchar(600) NOT NULL,
+  `movieDuration` int(4) UNSIGNED NOT NULL,
   `movieClassificationId` int(11) NOT NULL,
-  `movieGenreId` int(11) DEFAULT NULL,
+  `movieGenreId` int(11) NOT NULL,
   PRIMARY KEY (`movieId`),
   KEY `movieGenreId` (`movieGenreId`),
   KEY `movieClassificationId` (`movieClassificationId`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `movies`
 --
 
 INSERT INTO `movies` (`movieId`, `movieName`, `movieDesc`, `movieDuration`, `movieClassificationId`, `movieGenreId`) VALUES
-(1, 'The Nun', 'When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together, they uncover the order\'s unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of a demonic nun.', '01:36:00', 4, 6),
-(2, 'Interstellar', 'In Earth\'s future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth\'s population to a new home via a wormhole.', '02:49:00', 2, 1),
-(3, 'The Equalizer', 'Robert McCall (Denzel Washington), a man of mysterious origin who believes he has put the past behind him, dedicates himself to creating a quiet new life. However, when he meets Teri (Chloë Grace Moretz), a teenager who has been manhandled by violent Russian mobsters, he simply cannot walk away.', '02:12:00', 6, 2);
+(1, 'The Nun', 'When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together, they uncover the order\'s unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of a demonic nun.', 96, 4, 6),
+(2, 'Interstellar', 'In Earth\'s future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth\'s population to a new home via a wormhole.', 169, 2, 1),
+(3, 'The Equalizer', 'Robert McCall (Denzel Washington), a man of mysterious origin who believes he has put the past behind him, dedicates himself to creating a quiet new life. However, when he meets Teri (Chloï¿½ Grace Moretz), a teenager who has been manhandled by violent Russian mobsters, he simply cannot walk away.', 132, 6, 2),
+(25, 'Test', 'TEat', 123, 3, 4);
 
 -- --------------------------------------------------------
 

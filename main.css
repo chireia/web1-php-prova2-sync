@@ -1,9 +1,168 @@
-/* ----------------------- colors ----------------------- */
-/* ----------------------- global ----------------------- */
+/* ----------------------- Templates ----------------------- */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+main.Home, main.Create, main.Update, main.Movie {
+  height: 100%;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 90px auto 90px;
+      grid-template-rows: 90px auto 90px;
+  grid-gap: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(img/bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/bg.jpg);
+  background-repeat: repeat, repeat;
+  background-size: cover, cover;
+}
+
+main.Home > header#pc, main.Create > header#pc, main.Update > header#pc, main.Movie > header#pc {
+  height: 100%;
+  padding: 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main.Home > header#pc > figure, main.Create > header#pc > figure, main.Update > header#pc > figure, main.Movie > header#pc > figure {
+  margin: 0;
+}
+
+main.Home > header#pc > figure a, main.Create > header#pc > figure a, main.Update > header#pc > figure a, main.Movie > header#pc > figure a {
+  display: block;
+  height: 100%;
+}
+
+main.Home > header#pc > figure a img, main.Create > header#pc > figure a img, main.Update > header#pc > figure a img, main.Movie > header#pc > figure a img {
+  width: 171.844px;
+}
+
+main.Home > header#pc nav#menus, main.Create > header#pc nav#menus, main.Update > header#pc nav#menus, main.Movie > header#pc nav#menus {
+  -webkit-box-flex: 20;
+      -ms-flex-positive: 20;
+          flex-grow: 20;
+  padding-left: 25px;
+}
+
+main.Home > header#pc nav#menus a, main.Create > header#pc nav#menus a, main.Update > header#pc nav#menus a, main.Movie > header#pc nav#menus a {
+  margin-right: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+main.Home > header#pc nav#menus a h3, main.Create > header#pc nav#menus a h3, main.Update > header#pc nav#menus a h3, main.Movie > header#pc nav#menus a h3 {
+  margin: 0;
+}
+
+main.Home > header#pc nav#menus a:hover, main.Create > header#pc nav#menus a:hover, main.Update > header#pc nav#menus a:hover, main.Movie > header#pc nav#menus a:hover {
+  color: #00eb00;
+}
+
+main.Home > header#pc section#user, main.Create > header#pc section#user, main.Update > header#pc section#user, main.Movie > header#pc section#user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: .8em;
+  color: white;
+  height: 100%;
+}
+
+main.Home > header#pc section#user div, main.Create > header#pc section#user div, main.Update > header#pc section#user div, main.Movie > header#pc section#user div {
+  height: 20px;
+}
+
+main.Home > header#pc button, main.Create > header#pc button, main.Update > header#pc button, main.Movie > header#pc button {
+  margin-left: 25px;
+  width: 60px;
+  height: 34px;
+  border-radius: 4px;
+  background-color: maroon;
+  border: none;
+}
+
+main.Home > header#pc button:hover, main.Create > header#pc button:hover, main.Update > header#pc button:hover, main.Movie > header#pc button:hover {
+  background-color: #ff1a1a;
+}
+
+main.Home > header#pc button a, main.Create > header#pc button a, main.Update > header#pc button a, main.Movie > header#pc button a {
+  font-weight: bold;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  line-height: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+main.Home > header#mobile, main.Create > header#mobile, main.Update > header#mobile, main.Movie > header#mobile {
+  height: 100%;
+  padding: 0 25px;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main.Home > header#mobile > figure, main.Create > header#mobile > figure, main.Update > header#mobile > figure, main.Movie > header#mobile > figure {
+  margin: 0;
+}
+
+main.Home > header#mobile > figure a, main.Create > header#mobile > figure a, main.Update > header#mobile > figure a, main.Movie > header#mobile > figure a {
+  display: block;
+  height: 100%;
+}
+
+main.Home > header#mobile > figure a img, main.Create > header#mobile > figure a img, main.Update > header#mobile > figure a img, main.Movie > header#mobile > figure a img {
+  width: 171.844px;
+}
+
+@media (max-width: 768px) {
+  main.Home > header#pc, main.Create > header#pc, main.Update > header#pc, main.Movie > header#pc {
+    display: none;
+  }
+  main.Home > header#mobile, main.Create > header#mobile, main.Update > header#mobile, main.Movie > header#mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* ----------------------- global ----------------------- */
+.material-icons.md-light {
+  color: white;
+}
+
+.mhere {
+  color: #00B800 !important;
+}
+
 ::-moz-selection {
   background-color: #00B800;
 }
+
 ::selection {
   background-color: #00B800;
 }
@@ -15,12 +174,88 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   margin: 0;
 }
 
 h1, h2, h3, h4 {
-  margin: 0;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.sucess {
+  position: absolute;
+  left: 50%;
+  top: -999px;
+  width: auto;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #00B800;
+  -webkit-animation: fadeInNOut 2s ease forwards;
+          animation: fadeInNOut 2s ease forwards;
+}
+
+@-webkit-keyframes fadeInNOut {
+  0% {
+    top: -100px;
+  }
+  20% {
+    top: 10px;
+  }
+  80% {
+    top: 10px;
+  }
+  100% {
+    top: -100px;
+  }
+}
+
+@keyframes fadeInNOut {
+  0% {
+    top: -100px;
+  }
+  20% {
+    top: 10px;
+  }
+  80% {
+    top: 10px;
+  }
+  100% {
+    top: -100px;
+  }
+}
+
+.fail {
+  position: absolute;
+  left: 50%;
+  top: -999px;
+  width: auto;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #F00;
+  -webkit-animation: fadeInNOut 2s ease forwards;
+          animation: fadeInNOut 2s ease forwards;
+}
+
+@keyframes fadeInNOut {
+  0% {
+    top: -100px;
+  }
+  20% {
+    top: 10px;
+  }
+  80% {
+    top: 10px;
+  }
+  100% {
+    top: -100px;
+  }
 }
 
 /* ----------------------- login.php ----------------------- */
@@ -30,27 +265,28 @@ main.login {
   display: grid;
   -ms-grid-rows: 90px auto 90px;
       grid-template-rows: 90px auto 90px;
+  grid-gap: 20px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/bg.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/bg.jpg);
-  background-attachment: fixed, cover;
+  background-size: cover, cover;
 }
 
-main.login header.login {
+main.login header {
   height: 100%;
   padding: 25px 25px;
 }
 
-main.login header.login figure {
+main.login header figure {
   margin: 0;
   height: 100%;
 }
 
-main.login header.login figure img {
+main.login header figure img {
   width: 171.844px;
   height: 100%;
 }
 
-main.login section.login {
+main.login section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +303,7 @@ main.login section.login {
   margin: 0;
 }
 
-main.login section.login section {
+main.login section section {
   width: 100%;
   height: auto;
   max-width: 400px;
@@ -86,27 +322,21 @@ main.login section.login section {
           align-items: center;
 }
 
-main.login section.login section h1 {
-  font-size: 1.8em;
+main.login section section h1 {
+  font-size: 2em;
   color: #00B800;
-  margin: 0 0 10px 0;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
 }
 
-main.login section.login section form {
+main.login section section form {
   color: white;
   width: 100%;
   padding: 10px;
 }
 
-main.login section.login section form h2 {
-  font-weight: 400;
-  margin: 0 0 10px 0;
-}
-
-main.login section.login section form input {
+main.login section section form input {
   width: 100%;
   height: 40px;
   margin: 0 0 10px 0;
@@ -118,11 +348,9 @@ main.login section.login section form input {
   outline-color: #00B800;
 }
 
-main.login section.login section form h3 {
+main.login section section form h3 {
   opacity: 0;
   display: block;
-  margin: 0 0 10px 0;
-  font-weight: 400;
   font-size: .9em;
   color: #F00;
   width: 100%;
@@ -130,16 +358,14 @@ main.login section.login section form h3 {
   transition: opacity .2s;
 }
 
-main.login section.login section form h4 {
+main.login section section form h4 {
   display: block;
-  margin: 0 0 10px 0;
-  font-weight: 400;
   font-size: .9em;
   color: #F00;
   width: 100%;
 }
 
-main.login section.login section form button {
+main.login section section form button {
   margin: 10px 0 0 0;
   width: 100%;
   height: 40px;
@@ -151,7 +377,7 @@ main.login section.login section form button {
   cursor: pointer;
 }
 
-main.login footer.login {
+main.login footer {
   line-height: 70px;
   padding: 10px;
   color: white;
@@ -160,10 +386,10 @@ main.login footer.login {
 }
 
 @media (max-width: 768px) {
-  main.login header.login {
+  main.login header {
     padding: 25px 0;
   }
-  main.login header.login figure {
+  main.login header figure {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -171,26 +397,15 @@ main.login footer.login {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  main.login section.login section {
+  main.login section section {
     padding: 10px;
   }
 }
 
 /* ----------------------- index.php ----------------------- */
-main.index {
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 90px auto 90px;
-      grid-template-rows: 90px auto 90px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(img/bg.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/bg.jpg);
-  background-attachment: cover, cover;
-}
-
-main.index header.index {
-  height: 100%;
-  padding: 25px 25px;
+main.Home > section {
+  padding: 0 10vw;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,83 +413,76 @@ main.index header.index {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
-main.index header.index figure {
-  margin: 0;
-  height: 100%;
+main.Home > section h1 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 0 10px;
 }
 
-main.index header.index figure a {
-  display: block;
-  height: 100%;
+main.Home > section article {
+  width: 320px;
+  padding: 24px;
 }
 
-main.index header.index figure a img {
-  width: 171.844px;
-  height: 100%;
+@media (max-width: 400px) {
+  main.Home > section {
+    padding: 0;
+  }
 }
 
-main.index header.index section#menus {
-  -webkit-box-flex: 20;
-      -ms-flex-positive: 20;
-          flex-grow: 20;
-  padding-left: 25px;
-}
-
-main.index header.index section#menus a {
-  margin: 0 12.5px;
+/* ----------------------- create.php ----------------------- */
+main.Create > section {
+  padding: 0 10vw;
   color: white;
-  text-decoration: none;
 }
 
-main.index header.index section#user {
+/* ----------------------- update.php ----------------------- */
+main.Update > section {
+  padding: 0 10vw;
+  color: white;
+}
+
+/* ----------------------- movie.php ----------------------- */
+main.Movie > section {
+  padding: 0 10vw;
+  color: white;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  color: white;
-  height: 100%;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
-main.index header.index section#user div {
-  height: 20px;
+main.Movie > section h1 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
-main.index header.index button {
-  margin-left: 25px;
-  width: 60px;
-  height: 34px;
-  border-radius: 4px;
-  background-color: #b80000;
-  border: none;
+main.Movie > section figure {
+  margin: 0 0 10px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-main.index header.index button a {
-  font-weight: bold;
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  line-height: 32px;
-  color: white;
-  text-decoration: none;
+main.Movie > section figure img {
+  min-width: 320px;
+  width: 30vw;
 }
 
-main.index section.index {
-  padding: 0 200px;
-  color: white;
+main.Movie > section section {
+  padding: 0 10px;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 /*# sourceMappingURL=main.css.map */

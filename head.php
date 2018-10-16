@@ -6,5 +6,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/netflix.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>NextFlix - <?=$current?></title>
 </head>
 <body>

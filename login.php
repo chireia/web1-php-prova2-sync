@@ -1,23 +1,22 @@
 <?php 
-session_start();
-include "header.php";
+    session_start();
+    $current = "Login";
+    require_once "head.php";
 
-if(isset($_SESSION['status'])){($_SESSION['status']=='sucess'? header("location:index.php"):"");};
-
+    if(isset($_SESSION['status'])){($_SESSION['status']=='sucess'? header("location:index.php"):"");};
 ?>
-    <title>NextFlix - Login</title>
 
     <main class="login">
-        <header class="login">
+        <header>
             <figure>
                 <a href="index.php"><img src="img/netflix-text.png" alt="NextFlix"></a>
             </figure>
         </header>
 
-        <section class="login">
+        <section>
             <section>
                 <h1>Sign In</h1>
-                <form action="login-check.php" method="POST" >
+                <form action="crud.php" method="post" onsubmit="validate(event)">
                     <h4 id="danger3">
                         <?php if(isset($_SESSION['status'])){echo ($_SESSION['status']=='fail'?"User ou senha incorretos.":"");}; ?>
                     </h4>
@@ -35,37 +34,35 @@ if(isset($_SESSION['status'])){($_SESSION['status']=='sucess'? header("location:
                             Campo obrigatório.
                         </h3>
                     </label>
-                    <button <?php if(isset($_SESSION['status'])){echo ($_SESSION['status']=='fail'?"style='background-color: #F00;'":"");}; ?> onclick="validate(this)" type="submit" value="entar" name="entrar" >Login</button>
+                    <button <?php if(isset($_SESSION['status'])){echo ($_SESSION['status']=='fail'?"style='background-color: #F00;'":"");}; ?> type="submit" name="action" value="login">Login</button>
                 </form>
             </section>
         </section>
 
-        <footer class="login">
+        <footer>
             &copyhireia
         </footer>
     </main>
 
     <script>
         /* Pega todos os inputs e coloca num Array = inputs */
-        var inputs = document.getElementsByTagName("input");
+        var fields = document.querySelectorAll("input");
         
         /* Adiciona no evento "focusout", a função check */
-        for(var i = 0; i < inputs.length; i++){
-            inputs[i].addEventListener("focusout", function(){ check(this); });    
+        for(let field of fields){
+            field.addEventListener("focusout", function(){ check(this); })    
         }
 
         /* Segura a atualização da página com PREVENTDEFAULT caso esteja vazio os inputs, e emite aviso. Else, envia o form */
-        function validate(form) {
-           if(document.getElementById("login").value == "" || document.getElementById("pw").value == ""){
-                event.preventDefault(); //Caso tente enviar com algum campo vazio ele checa e mostra qual está vazio.
-                this.check(inputs[0]);
-                this.check(inputs[1]);
-           }
-           else {
-               form.submit();
-           }
+        function validate(event) {
+            for (let field of fields) {
+                if(field.value == ""){
+                    event.preventDefault(); //Caso tente enviar com algum campo vazio ele checa e mostra qual está vazio.
+                     this.check(field);
+                }
+            }
         }
-        
+
         /* Checa se os inputs estão vazios, caso estejam mostra a mesagem de "Campo obrigatório" */
         function check(x){
             if(x.value == ""){
@@ -86,10 +83,10 @@ if(isset($_SESSION['status'])){($_SESSION['status']=='sucess'? header("location:
                 }
             }
         }
-</script>
+    </script>
     
 
 <?php
 session_destroy(); //Destroy a sessão. Estou usando este método para executar a ação de "SAIR" do usuário logado.
-include "footer.php"
+require_once "footer.php"
 ?>
