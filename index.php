@@ -16,12 +16,11 @@
 
             <nav id="menus">
                 <a href="index.php" <?=$current=='Home' ? "class='mhere'" : false?>><h3>Home</h3></a>
-                <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?
-                "<a href='create.php' <?=$current=='Create' ? 'class='mhere'' : false?><h3>Create</h3></a>":false;?>
+                <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?"<a href='create.php'><h3>Create</h3></a>":false;?>
             </nav>
 
             <section id="user">
-                <div>Olá 
+                <div>Eae 
                     <?= $_SESSION['user'] ?>
                 </div>
                 <div>
@@ -38,7 +37,21 @@
             <figure>
                 <a href="index.php"><img src="img/netflix-text.png" alt="NextFlix"></a>
             </figure>
-            <i class="material-icons md-light">menu</i>
+            <div id="burger">
+                <div id="burger-btn">
+                    <i class="material-icons md-light">menu</i>
+                </div>
+                <nav id="burger-itens">
+                    <div class="user">
+                    <i class="material-icons">person</i> 
+                        <span><?= $_SESSION['user'] ?></span>
+                    </div>
+                    <a href="index.php" <?=$current=='Home' ? "class='mhere'": false?>><i class="material-icons md-light <?=$current=='Home' ? 'mhere': false?>">home</i><span class="item <?=$current=='Home' ? 'mhere' : false?>">Home</span></a>
+                    <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?
+                    "<a href='create.php'><i class='material-icons md-light'>backup</i><span class='item'>Create</span></a>":false;?>
+                    <a href="login.php" class="logoff"><i class="material-icons md-light logoff">exit_to_app</i><span class="item logoff">Logoff</span></a>
+                </nav>
+            </div>
         </header>
 
         <section>
@@ -53,20 +66,25 @@
             
             while ($res = mysqli_fetch_array($select)) {
                 echo    "<article>
-                            <h3>".$res['movieName']."</h3>
-                            <p><a href='movie.php?id=".$res['movieId']."'><img src='img/".$res['movieGenreId'].".png' width='100'></a></p>
-                            <p>".$res['movieDuration']."</p>
-                            <p>".$res['genreName']."</p>
-                            <p>".$res['classificationSimbol']."</p>";
-                            if(isset($_SESSION['type']) && $_SESSION['type']=='Admin'){
-                                echo "<a href='update.php?id=$res[movieId]&action=edit'><button>Edit</button></a>";
-                                echo "<a onclick='sure(event)' href='crud.php?id=$res[movieId]&action=del'><button>Delete</button></a>";
-                            };
-                echo    "</article>";
+                            <a href='movie.php?id=".$res['movieId']."'><img src='img/".$res['movieGenreId'].".png'></a>
+                            <section>
+                                <h3>".$res['movieName']."</h3>
+                                <span class='CG'>
+                                    <span>".$res['genreName']."</span>
+                                    <span><img src='img/".$res['classificationSimbol'].".png' width='24px'></span>
+                                </span>
+                                <span>".$res['movieDuration']."m</span>
+                                ";
+                                if(isset($_SESSION['type']) && $_SESSION['type']=='Admin'){
+                                    echo "<span class='opts'><a class='edit' href='update.php?id=$res[movieId]&action=edit'><i class='material-icons md-light'>edit</i></a>";
+                                    echo                 "<a class='delete'  onclick='sure(event)' href='crud.php?id=$res[movieId]&action=del'><i class='material-icons md-light'>close</i></a>
+                                          </span>";
+                                };
+                echo       "</section>
+                        </article>";
             }
             ?>
         </section>
-
         <footer>
 
         </footer>

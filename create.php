@@ -6,22 +6,22 @@
 
     /* Se o login não estiver realizado, manda para tela de login */
     $_SESSION['status']=='sucess'? true : header("location:login.php");
+    $_SESSION['type']=='Admin'? true : header("location:index.php");
 ?>
 
     <main class="<?=$current?>">
-    <header id="pc">
+        <header id="pc">
             <figure>
                 <a href="index.php"><img src="img/netflix-text.png" alt="NextFlix"></a>
             </figure>
 
             <nav id="menus">
                 <a href="index.php" <?=$current=='Home' ? "class='mhere'" : false?>><h3>Home</h3></a>
-                <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?
-                "<a href='create.php' <?=$current=='Create' ? 'class='mhere'' : false?><h3>Create</h3></a>":false;?>
+                <a href="create.php" <?=$current=='Create' ? "class='mhere'" : false?>><h3>Create</h3></a>
             </nav>
 
             <section id="user">
-                <div>Olá 
+                <div>Eae 
                     <?= $_SESSION['user'] ?>
                 </div>
                 <div>
@@ -35,7 +35,24 @@
         </header>
 
         <header id="mobile">
-            
+            <figure>
+                <a href="index.php"><img src="img/netflix-text.png" alt="NextFlix"></a>
+            </figure>
+            <div id="burger">
+                <div id="burger-btn">
+                    <i class="material-icons md-light">menu</i>
+                </div>
+                <nav id="burger-itens">
+                    <div class="user">
+                    <i class="material-icons">person</i> 
+                        <span><?= $_SESSION['user'] ?></span>
+                    </div>
+                    <a href="index.php" <?=$current=='Home' ? "class='mhere'": false?>><i class="material-icons md-light">home</i><span class="item">Home</span></a>
+                    <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?
+                    "<a href='create.php' class='mhere'><i class='material-icons md-light mhere'>backup</i><span class='item mhere'>Create</span></a>":false;?>
+                    <a href="login.php" class="logoff"><i class="material-icons md-light logoff">exit_to_app</i><span class="item logoff">Logoff</span></a>
+                </nav>
+            </div>
         </header>
         
         <section>

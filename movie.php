@@ -46,18 +46,43 @@
         </header>
 
         <header id="mobile">
-            
+            <figure>
+                <a href="index.php"><img src="img/netflix-text.png" alt="NextFlix"></a>
+            </figure>
+            <div id="burger">
+                <div id="burger-btn">
+                    <i class="material-icons md-light">menu</i>
+                </div>
+                <nav id="burger-itens">
+                    <div class="user">
+                    <i class="material-icons">person</i> 
+                        <span><?= $_SESSION['user'] ?></span>
+                    </div>
+                    <a href="index.php" <?=$current=='Home' ? "class='mhere'": false?>><i class="material-icons md-light <?=$current=='Home' ? 'mhere': false?>">home</i><span class="item <?=$current=='Home' ? 'mhere' : false?>">Home</span></a>
+                    <?=isset($_SESSION['type']) && $_SESSION['type']=='Admin'?
+                    "<a href='create.php'><i class='material-icons md-light'>backup</i><span class='item'>Create</span></a>":false;?>
+                    <a href="login.php" class="logoff"><i class="material-icons md-light logoff">exit_to_app</i><span class="item logoff">Logoff</span></a>
+                </nav>
+            </div>
         </header>
 
         <section>
             <h1>Movie Overview</h1>
             <figure><img src="img/<?=$item['movieGenreId']?>.png"></figure>
             <section>
-                <h2><?=$item['movieName']?></h2>
-                <span><?=$item['classificationSimbol']?></span>
-                <p><?=$item['movieDesc']?></p>
-                <p><?=$item['movieDuration']?></p>
-                <p><?=$item['genreName']?></p>
+                <div id="title">
+                    <h2><?=$item['movieName']?></h2>
+                    <img src="img/<?=$item['classificationSimbol']?>.png" width='40px'>
+                </div>
+                <div>
+                    <h3>Description:</h3>
+                    <p><?=$item['movieDesc']?></p>
+                </div>
+                <div id="DG">
+                    <h3>Duration: <?=$item['movieDuration']?> m</h3>
+                        <h3>Genre: <?=$item['genreName']?></h3>
+
+                </div>
             </section>
         </section>
     </main>
