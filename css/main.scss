@@ -210,6 +210,17 @@ $colors: (
     }
 };
 
+%footerTemplate {
+    footer{
+        line-height: 70px;
+        padding: 10px;
+
+        color: white;
+        font-weight: bold;
+        text-align: right;
+    }
+};
+
 /* ----------------------- global ----------------------- */
 @font-face {
     font-family: Montserrat;
@@ -405,14 +416,7 @@ main.login{
         
     }
 
-    footer{
-        line-height: 70px;
-        padding: 10px;
-
-        color: white;
-        font-weight: bold;
-        text-align: right;
-    }
+    @extend %footerTemplate;
 
     @media (max-width: 768px) {
         header {
@@ -480,7 +484,7 @@ main.Home{
                 justify-content: space-between;
                 align-items: flex-start;
 
-                background-color: rgb(5, 5, 5);
+                background-color: rgba(0, 0, 0, 0.4);
                 border-radius: 0px 3px 3px 0px;
                 
                 h3 {
@@ -551,6 +555,8 @@ main.Home{
         }
     }
 
+    @extend %footerTemplate;
+
     @media (max-width: 460px) {
         >section {
             padding: 0;
@@ -579,7 +585,73 @@ main.Create{
     >section {
         padding: 0 10vw;
         color: white;
+
+        form {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+
+            label{
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                width: 80%;
+
+                h3{
+                    width: 100%;
+                }
+                input, select, textarea {
+                    width: 100%;
+                    height: 40px;
+                    margin: 0 0 10px 0;
+                    border: 2px solid rgba(0, 0, 0, 0);
+                    border-radius: 5px;
+                    text-align: center;
+                    color: rgb(0, 0, 0);
+                    font-weight: bold;
+                    outline-color: color(primary);
+                }
+
+                textarea#mdesc { 
+                    height: 200px;
+                    resize: none;
+                }
+
+                select option:checked {
+                    background-color: color(primary);
+                }
+            }
+
+            button {
+                margin: 10px 0 0 0;
+
+                width: 80%;
+                height: 40px;
+                color: white;
+                font-weight: bold;
+                background-color: color(primary);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+            }
+        }
     }
+
+    @media (max-width: 425px){
+        >section {
+            form {
+                label{
+                    width: 100%;
+                }
+                
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @extend %footerTemplate;
 }
 
 /* ----------------------- update.php ----------------------- */
@@ -590,7 +662,75 @@ main.Update{
     >section {
         padding: 0 10vw;
         color: white;
+    
+        form {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+
+            label{
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                width: 80%;
+
+                h3{
+                    width: 100%;
+                }
+                input, select, textarea {
+                    width: 100%;
+                    height: 40px;
+                    margin: 0 0 10px 0;
+                    border: 2px solid rgba(0, 0, 0, 0);
+                    border-radius: 5px;
+                    text-align: center;
+                    color: rgb(0, 0, 0);
+                    font-weight: bold;
+                    outline-color: color(primary);
+
+                }
+
+                textarea#mdesc { 
+                    height: 200px;
+                    resize: none;
+                }
+
+                select option:checked {
+                    background-color: color(primary);
+                }
+            }
+
+            button {
+                margin: 10px 0 0 0;
+
+                width: 80%;
+                height: 40px;
+                color: white;
+                font-weight: bold;
+                background-color: color(primary);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+            }
+        }
     }
+
+    @media (max-width: 425px){
+        >section {
+            form {
+                label{
+                    width: 100%;
+                }
+                
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @extend %footerTemplate;
 }
 
 /* ----------------------- movie.php ----------------------- */
@@ -618,7 +758,7 @@ main.Movie{
             text-align: center;
             img {
                 min-width: 300px;
-                width: 30vw;
+                width: 28vw;
             }
         }
 
@@ -630,6 +770,9 @@ main.Movie{
             display: flex;
             flex-flow: column wrap;
             justify-content: space-between;
+
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
 
             #title {
                 display: flex;
@@ -659,6 +802,9 @@ main.Movie{
         }
         
     }
+
+    @extend %footerTemplate;
+
     @media (max-width: 460px) {
         >section {
             padding: 0;

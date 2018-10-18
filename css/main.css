@@ -241,6 +241,14 @@ main.Home > header#mobile #burger:hover #burger-itens, main.Create > header#mobi
   }
 }
 
+main.login footer, main.Home footer, main.Create footer, main.Update footer, main.Movie footer {
+  line-height: 70px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+}
+
 /* ----------------------- global ----------------------- */
 @font-face {
   font-family: Montserrat;
@@ -486,14 +494,6 @@ main.login section section form button {
   cursor: pointer;
 }
 
-main.login footer {
-  line-height: 70px;
-  padding: 10px;
-  color: white;
-  font-weight: bold;
-  text-align: right;
-}
-
 @media (max-width: 768px) {
   main.login header {
     padding: 25px 0;
@@ -583,7 +583,7 @@ main.Home > section article section {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-color: #050505;
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0px 3px 3px 0px;
 }
 
@@ -700,10 +700,156 @@ main.Create > section {
   color: white;
 }
 
+main.Create > section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.Create > section form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+main.Create > section form label h3 {
+  width: 100%;
+}
+
+main.Create > section form label input, main.Create > section form label select, main.Create > section form label textarea {
+  width: 100%;
+  height: 40px;
+  margin: 0 0 10px 0;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  outline-color: #00B800;
+}
+
+main.Create > section form label textarea#mdesc {
+  height: 200px;
+  resize: none;
+}
+
+main.Create > section form label select option:checked {
+  background-color: #00B800;
+}
+
+main.Create > section form button {
+  margin: 10px 0 0 0;
+  width: 80%;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  background-color: #00B800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  main.Create > section form label {
+    width: 100%;
+  }
+  main.Create > section form button {
+    width: 100%;
+  }
+}
+
 /* ----------------------- update.php ----------------------- */
 main.Update > section {
   padding: 0 10vw;
   color: white;
+}
+
+main.Update > section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.Update > section form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+main.Update > section form label h3 {
+  width: 100%;
+}
+
+main.Update > section form label input, main.Update > section form label select, main.Update > section form label textarea {
+  width: 100%;
+  height: 40px;
+  margin: 0 0 10px 0;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  outline-color: #00B800;
+}
+
+main.Update > section form label textarea#mdesc {
+  height: 200px;
+  resize: none;
+}
+
+main.Update > section form label select option:checked {
+  background-color: #00B800;
+}
+
+main.Update > section form button {
+  margin: 10px 0 0 0;
+  width: 80%;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  background-color: #00B800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  main.Update > section form label {
+    width: 100%;
+  }
+  main.Update > section form button {
+    width: 100%;
+  }
 }
 
 /* ----------------------- movie.php ----------------------- */
@@ -738,7 +884,7 @@ main.Movie > section figure {
 
 main.Movie > section figure img {
   min-width: 300px;
-  width: 30vw;
+  width: 28vw;
 }
 
 main.Movie > section section {
@@ -757,6 +903,8 @@ main.Movie > section section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 main.Movie > section section #title {

@@ -85,8 +85,9 @@
             }
             ?>
         </section>
+        
         <footer>
-
+            &copyhireia
         </footer>
     </main>
 

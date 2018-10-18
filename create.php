@@ -66,7 +66,7 @@
                 </label><br>
                 <label for="mdesc">
                     <h3>Movie Description:</h3>
-                    <input id="mdesc" type="text" placeholder="Desc..." name="mdesc" maxlength="600">
+                    <textarea id="mdesc" type="text" placeholder="Desc..." name="mdesc" maxlength="600"></textarea>
                 </label><br>
                 <label for="mdur">
                     <h3>Movie Duration:</h3>
@@ -103,11 +103,15 @@
                 <button type="submit" name="action" value="create">Save</button>
             </form>
         </section>
-    <main>
+
+        <footer>
+            &copyhireia
+        </footer>
+    </main>
 
     <script>
         /* Pega todos os inputs e coloca num Array = fields */
-        var fields = document.querySelectorAll('input, select');
+        var fields = document.querySelectorAll('input, select, textarea');
         console.log(fields);
         
         /* Adiciona no evento "focusout", a função check */

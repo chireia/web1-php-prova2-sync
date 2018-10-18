@@ -85,6 +85,10 @@
                 </div>
             </section>
         </section>
+
+        <footer>
+            &copyhireia
+        </footer>
     </main>
 
 <?php
