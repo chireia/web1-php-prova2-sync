@@ -113,6 +113,7 @@ main.Home > header#pc button a, main.Create > header#pc button a, main.Update > 
 main.Home > header#mobile, main.Create > header#mobile, main.Update > header#mobile, main.Movie > header#mobile {
   height: 100%;
   padding: 0 25px;
+  z-index: 1;
   display: none;
   position: -webkit-sticky;
   position: sticky;
