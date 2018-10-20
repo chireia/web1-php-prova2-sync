@@ -301,7 +301,7 @@ h1, h2, h3, h4 {
 }
 
 .sucess {
-  position: absolute;
+  position: fixed;
   right: 0;
   width: 100%;
   top: -999px;
@@ -345,7 +345,7 @@ h1, h2, h3, h4 {
 }
 
 .fail {
-  position: absolute;
+  position: fixed;
   top: -999px;
   right: 0;
   width: 100%;
